@@ -28,7 +28,7 @@ const Register = () => {
                 navigate('/dashboard');
             }
         } catch (err) {
-            setError(err);
+            setError(typeof err === 'string' ? err : err?.message || 'Something went wrong');
         } finally {
             setLoading(false);
         }
